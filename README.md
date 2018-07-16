@@ -62,7 +62,7 @@ Dodaje novu kategoriju. Ovo je primer za slanje:
 3. `PUT` [http://localhost:5000/api/Category](url)
 Menja ime kategorije na datom id-u. Ovo je primer za slanje:
 {
-"id": "id kategorije"
+"id": "id kategorije",
 "name": "ime kategorije"
 }
 
@@ -70,7 +70,7 @@ Menja ime kategorije na datom id-u. Ovo je primer za slanje:
 4. `DELETE` [http://localhost:5000/api/Category](url)
 Brise kategoriju. Ovo je primer za slanje:
 {
-"id": "id kategorije"
+"id": "id kategorije",
 "name": "ime kategorije"
 }
 
