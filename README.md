@@ -93,6 +93,9 @@ Dodaje novi komentar. Ovo je primer za slanje:
 #### Hello World API
 Takodje kao primer postoji i [http://0.0.0.0:8090/api/Hello](http://0.0.0.0:8090/api/Hello) koji ima samo GET i vraca Hello World.
 
+## Running the Tests
+Postoji i mogucnost pokretanja automatskih testova. Skripta tests/test.py vrsi automatsku proveru svih funkcionalnosti i ukoliko je sve ispravno vraca OK, a u suprotnom ispisuje kod greske.
+
 ## Versions
 1. Osnovni API sa kategorijama i bazom
 2. Dodati komentari, promenjen localhost u 0.0.0.0:8090 i promenjen README.md
