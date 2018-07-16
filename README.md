@@ -5,7 +5,6 @@ Razlike u odnosu na tutorijal su:
 
 1. Rad u PyCharm-u
 2. SQLite umesto PostgreSQL
-3. Eliminacija dela sa komentarima, ovde su samo kategorije
 
 ## Getting Started
 
@@ -21,6 +20,7 @@ Sadrzaj requirements.txt, odnosno neophone ekstenzije:
 - `flask_sqlalchemy`
 - `flask_marshmallow`
 - `marshmallow-sqlalchemy`
+- `requests`
 
 
 ### Installing
@@ -37,7 +37,8 @@ Ovo su komande koje vrse migraciju baze podataka, odnosno version control za baz
 ## Running
 Program se pokreće pokretanjem run.py fajla.
 
-Moguci zahtevi koji mogu da se posalju na [http://localhost:5000/api/Category](url) su:
+#### Category API
+Moguci zahtevi koji mogu da se posalju na [http://0.0.0.0:8090/api/Category](http://0.0.0.0:8090/api/Category) su:
 
 - GET - prikazuje sve kategorije
 - POST - ubacuje novu kategoriju u bazu (potrebno polje je "name")
@@ -50,31 +51,48 @@ Format za slanje je:
 `	"name": "kategorija"`
 `}`
 
-1. `GET` [http://localhost:5000/api/Category](url)
+1. `GET` [http://0.0.0.0:8090/api/Category](http://0.0.0.0:8090/api/Category)
 Vraca listu svih kategorija 
 
-2. `POST` [http://localhost:5000/api/Category](url)
+2. `POST` [http://0.0.0.0:8090/api/Category](http://0.0.0.0:8090/api/Category)
 Dodaje novu kategoriju. Ovo je primer za slanje:
 {
 "name": "ime kategorije"
 }
 
-3. `PUT` [http://localhost:5000/api/Category](url)
+3. `PUT` [http://0.0.0.0:8090/api/Category](http://0.0.0.0:8090/api/Category)
 Menja ime kategorije na datom id-u. Ovo je primer za slanje:
 {
 "id": "id kategorije",
 "name": "ime kategorije"
 }
 
-
-4. `DELETE` [http://localhost:5000/api/Category](url)
+4. `DELETE` [http://0.0.0.0:8090/api/Category](http://0.0.0.0:8090/api/Category)
 Brise kategoriju. Ovo je primer za slanje:
 {
 "id": "id kategorije",
 "name": "ime kategorije"
 }
 
-Takodje kao primer postoji i [http://localhost:5000/api/Hello](url) koji ima samo GET i vraca Hello World.
+#### Comment API
+Moguci zahtevi koji mogu da se posalju na [http://0.0.0.0:8090/api/Comment](http://0.0.0.0:8090/api/Comment) su:
+
+- GET - prikazuje sve komentare
+- POST - dodaje novi komentar u bazu (potrebna polja su "category_id" i "comment")
+
+1. `GET` [http://0.0.0.0:8090/api/Comment](http://0.0.0.0:8090/api/Comment)
+Vraca sve komentare
+
+2. `POST` [http://0.0.0.0:8090/api/Comment](http://0.0.0.0:8090/api/Comment)
+Dodaje novi komentar. Ovo je primer za slanje:
+{
+"category_id": "id kategorije"
+"comment": "tekst komentara"
+}
+
+#### Hello World API
+Takodje kao primer postoji i [http://0.0.0.0:8090/api/Hello](http://0.0.0.0:8090/api/Hello) koji ima samo GET i vraca Hello World.
 
 ## Versions
 1. Osnovni API sa kategorijama i bazom
+2. Dodati komentari, promenjen localhost u 0.0.0.0:8090 i promenjen README.md
