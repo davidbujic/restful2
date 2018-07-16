@@ -86,7 +86,7 @@ Vraca sve komentare
 2. `POST` [http://0.0.0.0:8090/api/Comment](http://0.0.0.0:8090/api/Comment)
 Dodaje novi komentar. Ovo je primer za slanje:
 {
-"category_id": "id kategorije"
+"category_id": "id kategorije",
 "comment": "tekst komentara"
 }
 
