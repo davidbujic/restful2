@@ -1,5 +1,5 @@
-# Opis Projekta: restful2 -demo koriscenja Flask-restful extensije i kreiranje Rest API funkcija
-Ovo je primer za Rest API koji koristi flask-restful ekstenziju i ima u sebi bazu komentara svrstanih u kategirije. Inspirisan i radjen po tutorijalu [https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx](https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx) .  
+# Opis Projekta: restful2 -demo koriscenja Flask-restful extenzije i kreiranje Rest API funkcija
+Kreiran  je primer, kao templateprojekat, za Rest API koji koristi flask-restful ekstenziju i ima u sebi bazu komentara svrstanih u kategirije. Inspirisan i radjen po tutorijalu [https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx](https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx) .  
 U tutorijalu je koriscen PostgreSQL, ali je prepravljeno da se koristi SQLite koji je deo instalacije pythona i ne zahteva posebni db server.
 
 Razlike u odnosu na tutorijal su:
