@@ -1,17 +1,19 @@
-# Rest API
-Ovo je primer za Rest API koji koristi flask-restful ekstenziju i ima u sebi bazu kategorija. Radjen po tutorijalu [https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx](https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx) U tutorijalu je koriscen PostgreSQL, ali je prepravljeno da se koristi SQLite.
+# Opis Projekta: restful2 -demo koriscenja Flask-retful extensije i kreiranje Rest API funkcija
+Ovo je primer za Rest API koji koristi flask-restful ekstenziju i ima u sebi bazu komentara svrstanih u kategirije. Inspirisan i radjen po tutorijalu [https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx](https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx) .  
+U tutorijalu je koriscen PostgreSQL, ali je prepravljeno da se koristi SQLite koji je deo instalacije pythona i ne zahteva posebni db server.
 
 Razlike u odnosu na tutorijal su:
 
-1. Rad u PyCharm-u
+1. IDE za rad je  PyCharm
 2. SQLite umesto PostgreSQL
 
 ## Getting Started
 
 ### Requirements
-Za ovaj projekat potreban je PyCharm.
+Za ovaj projekat potreban je Community version PyCharm.
+Github.com account
 
-Sadrzaj requirements.txt, odnosno neophone ekstenzije:
+File requirements.txt sadrzi listu neophdnih ekstenzija, koje pyCharm automatski instalira u virtualni environment:
 - `flask`
 - `flask_restful`
 - `flask_script`
@@ -29,14 +31,15 @@ Nakon toga se otvara folder pomocu PyCharm-a. Ukoliko je potrebno treba podesiti
 
 Da bi se pokrenuo server, pokrece se run.py fajl.
 
-U slucaju promene Model.py fajla, potrebno je da se pokrenu sledece komande u terminalu u okviru virtual environment-a:
-`python migrate.py db migrate`
-`python migrate.py db upgrade`
+U slucaju promene Model.py fajla, potrebno je da se pokrenu sledece komande u terminalu u okviru virtual environment-a:  
+`python migrate.py db migrate`  
+`python migrate.py db upgrade`  
 Ovo su komande koje vrse migraciju baze podataka, odnosno version control za bazu.
 
 ## Running
 Program se pokreće pokretanjem run.py fajla.
 
+## Restful API doc
 #### Category API
 Moguci zahtevi koji mogu da se posalju na [http://0.0.0.0:8090/api/Category](http://0.0.0.0:8090/api/Category) su:
 
