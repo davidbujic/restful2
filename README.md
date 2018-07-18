@@ -89,6 +89,7 @@ Moguci zahtevi koji mogu da se posalju na [http://0.0.0.0:8090/api/Comment](http
 
 1. `GET` [http://0.0.0.0:8090/api/Comment](http://0.0.0.0:8090/api/Comment)
 Vraca sve komentare
+`curl -XGET -d '' 'http://0.0.0.0:8090/api/Comment'`
 
 2. `POST` [http://0.0.0.0:8090/api/Comment](http://0.0.0.0:8090/api/Comment)
 Dodaje novi komentar. Ovo je primer za slanje:
@@ -96,9 +97,11 @@ Dodaje novi komentar. Ovo je primer za slanje:
 "category_id": "id kategorije",
 "comment": "tekst komentara"
 }
+`curl -XPOST -d '{ "category_id": "id kategorije", "comment": "tekst komentara" }' 'http://0.0.0.0:8090/api/Comment'`
 
 #### Hello World API
 Takodje kao primer postoji i [http://0.0.0.0:8090/api/Hello](http://0.0.0.0:8090/api/Hello) koji ima samo GET i vraca Hello World.
+`curl -XPOST -d '{ "category_id": "id kategorije", "comment": "tekst komentara" }' 'http://0.0.0.0:8090/api/Comment'`
 
 ## Running the Tests
 Postoji i mogucnost pokretanja automatskih testova pomocu pytest ekstenzije. Skripta Tests/test_hello.py testira Hello World API, Tests/test_comment.py testira Comment API, a Tests/test_category.py testira Category API.
