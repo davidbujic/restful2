@@ -1,18 +1,19 @@
-# Rest API
-Ovo je primer za Rest API koji koristi flask-restful ekstenziju i ima u sebi bazu kategorija. Radjen po tutorijalu [https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx](https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx) U tutorijalu je koriscen PostgreSQL, ali je prepravljeno da se koristi SQLite.
+# Opis Projekta: restful2 -demo koriscenja Flask-restful extenzije i kreiranje Rest API funkcija
+Kreiran  je primer, kao templateprojekat, za Rest API koji koristi flask-restful ekstenziju i ima u sebi bazu komentara svrstanih u kategirije. Inspirisan i radjen po tutorijalu [https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx](https://www.codementor.io/dongido/how-to-build-restful-apis-with-python-and-flask-fh5x7zjrx) .  
+U tutorijalu je koriscen PostgreSQL, ali je prepravljeno da se koristi SQLite koji je deo instalacije pythona i ne zahteva posebni db server.
 
 Razlike u odnosu na tutorijal su:
 
-1. Rad u PyCharm-u
+1. IDE za rad je  PyCharm
 2. SQLite umesto PostgreSQL
-3. Eliminacija dela sa komentarima, ovde su samo kategorije
 
 ## Getting Started
 
 ### Requirements
-Za ovaj projekat potreban je PyCharm.
+Za ovaj projekat potreban je Community version PyCharm.
+Github.com account
 
-Sadrzaj requirements.txt, odnosno neophone ekstenzije:
+File requirements.txt sadrzi listu neophdnih ekstenzija, koje pyCharm automatski instalira u virtualni environment:
 - `flask`
 - `flask_restful`
 - `flask_script`
@@ -21,6 +22,7 @@ Sadrzaj requirements.txt, odnosno neophone ekstenzije:
 - `flask_sqlalchemy`
 - `flask_marshmallow`
 - `marshmallow-sqlalchemy`
+- `requests`
 
 
 ### Installing
@@ -29,15 +31,17 @@ Nakon toga se otvara folder pomocu PyCharm-a. Ukoliko je potrebno treba podesiti
 
 Da bi se pokrenuo server, pokrece se run.py fajl.
 
-U slucaju promene Model.py fajla, potrebno je da se pokrenu sledece komande u terminalu u okviru virtual environment-a:
-`python migrate.py db migrate`
-`python migrate.py db upgrade`
+U slucaju promene Model.py fajla, potrebno je da se pokrenu sledece komande u terminalu u okviru virtual environment-a:  
+`python migrate.py db migrate`  
+`python migrate.py db upgrade`  
 Ovo su komande koje vrse migraciju baze podataka, odnosno version control za bazu.
 
 ## Running
 Program se pokreće pokretanjem run.py fajla.
 
-Moguci zahtevi koji mogu da se posalju na [http://localhost:5000/api/Category](url) su:
+## Restful API doc
+#### Category API
+Moguci zahtevi koji mogu da se posalju na [http://0.0.0.0:8090/api/Category](http://0.0.0.0:8090/api/Category) su:
 
 - GET - prikazuje sve kategorije
 - POST - ubacuje novu kategoriju u bazu (potrebno polje je "name")
@@ -50,31 +54,51 @@ Format za slanje je:
 `	"name": "kategorija"`
 `}`
 
-1. `GET` [http://localhost:5000/api/Category](url)
+1. `GET` [http://0.0.0.0:8090/api/Category](http://0.0.0.0:8090/api/Category)
 Vraca listu svih kategorija 
 
-2. `POST` [http://localhost:5000/api/Category](url)
+2. `POST` [http://0.0.0.0:8090/api/Category](http://0.0.0.0:8090/api/Category)
 Dodaje novu kategoriju. Ovo je primer za slanje:
 {
 "name": "ime kategorije"
 }
 
-3. `PUT` [http://localhost:5000/api/Category](url)
+3. `PUT` [http://0.0.0.0:8090/api/Category](http://0.0.0.0:8090/api/Category)
 Menja ime kategorije na datom id-u. Ovo je primer za slanje:
 {
 "id": "id kategorije",
 "name": "ime kategorije"
 }
 
-
-4. `DELETE` [http://localhost:5000/api/Category](url)
+4. `DELETE` [http://0.0.0.0:8090/api/Category](http://0.0.0.0:8090/api/Category)
 Brise kategoriju. Ovo je primer za slanje:
 {
 "id": "id kategorije",
 "name": "ime kategorije"
 }
 
-Takodje kao primer postoji i [http://localhost:5000/api/Hello](url) koji ima samo GET i vraca Hello World.
+#### Comment API
+Moguci zahtevi koji mogu da se posalju na [http://0.0.0.0:8090/api/Comment](http://0.0.0.0:8090/api/Comment) su:
+
+- GET - prikazuje sve komentare
+- POST - dodaje novi komentar u bazu (potrebna polja su "category_id" i "comment")
+
+1. `GET` [http://0.0.0.0:8090/api/Comment](http://0.0.0.0:8090/api/Comment)
+Vraca sve komentare
+
+2. `POST` [http://0.0.0.0:8090/api/Comment](http://0.0.0.0:8090/api/Comment)
+Dodaje novi komentar. Ovo je primer za slanje:
+{
+"category_id": "id kategorije",
+"comment": "tekst komentara"
+}
+
+#### Hello World API
+Takodje kao primer postoji i [http://0.0.0.0:8090/api/Hello](http://0.0.0.0:8090/api/Hello) koji ima samo GET i vraca Hello World.
+
+## Running the Tests
+Postoji i mogucnost pokretanja automatskih testova. Skripta tests/test.py vrsi automatsku proveru svih funkcionalnosti i ukoliko je sve ispravno vraca OK, a u suprotnom ispisuje kod greske.
 
 ## Versions
 1. Osnovni API sa kategorijama i bazom
+2. Dodati komentari, promenjen localhost u 0.0.0.0:8090 i promenjen README.md
