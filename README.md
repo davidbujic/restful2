@@ -23,7 +23,7 @@ File requirements.txt sadrzi listu neophdnih ekstenzija, koje pyCharm automatski
 - `flask_marshmallow`
 - `marshmallow-sqlalchemy`
 - `requests`
-
+- `pytest`
 
 ### Installing
 Ovaj projekat se pokreće pomoću PyCharm-a. Prvo je potrebno preuzeti sa GitHub-a ili pokrenuti komandu: `git clone https://github.com/nikilic/restful2`.
@@ -56,12 +56,14 @@ Format za slanje je:
 
 1. `GET` [http://0.0.0.0:8090/api/Category](http://0.0.0.0:8090/api/Category)
 Vraca listu svih kategorija 
+`curl -XGET -d '' 'http://0.0.0.0:8090/api/Category'`
 
 2. `POST` [http://0.0.0.0:8090/api/Category](http://0.0.0.0:8090/api/Category)
 Dodaje novu kategoriju. Ovo je primer za slanje:
 {
 "name": "ime kategorije"
 }
+`curl -XPOST -d '{ "name":  "ime kategorije" }' 'http://0.0.0.0:8090/api/Category'`
 
 3. `PUT` [http://0.0.0.0:8090/api/Category](http://0.0.0.0:8090/api/Category)
 Menja ime kategorije na datom id-u. Ovo je primer za slanje:
@@ -69,6 +71,7 @@ Menja ime kategorije na datom id-u. Ovo je primer za slanje:
 "id": "id kategorije",
 "name": "ime kategorije"
 }
+`curl -XPUT -d '{ "id": "id kategorije", "name":  "ime kategorije" }' 'http://0.0.0.0:8090/api/Category'`
 
 4. `DELETE` [http://0.0.0.0:8090/api/Category](http://0.0.0.0:8090/api/Category)
 Brise kategoriju. Ovo je primer za slanje:
@@ -76,6 +79,7 @@ Brise kategoriju. Ovo je primer za slanje:
 "id": "id kategorije",
 "name": "ime kategorije"
 }
+`curl -XDELETE -d '{ "id": "id kategorije", "name":  "ime kategorije" }' 'http://0.0.0.0:8090/api/Category'`
 
 #### Comment API
 Moguci zahtevi koji mogu da se posalju na [http://0.0.0.0:8090/api/Comment](http://0.0.0.0:8090/api/Comment) su:
@@ -97,8 +101,10 @@ Dodaje novi komentar. Ovo je primer za slanje:
 Takodje kao primer postoji i [http://0.0.0.0:8090/api/Hello](http://0.0.0.0:8090/api/Hello) koji ima samo GET i vraca Hello World.
 
 ## Running the Tests
-Postoji i mogucnost pokretanja automatskih testova. Skripta tests/test.py vrsi automatsku proveru svih funkcionalnosti i ukoliko je sve ispravno vraca OK, a u suprotnom ispisuje kod greske.
+Postoji i mogucnost pokretanja automatskih testova pomocu pytest ekstenzije. Skripta Tests/test_hello.py testira Hello World API, Tests/test_comment.py testira Comment API, a Tests/test_category.py testira Category API.
+Ovi testovi se pokrecu iz PyCharm-a desnim klikom na fajl, pa Run.
 
 ## Versions
 1. Osnovni API sa kategorijama i bazom
 2. Dodati komentari, promenjen localhost u 0.0.0.0:8090 i promenjen README.md
+3. Dodati testovi u Tests folder
