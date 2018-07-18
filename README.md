@@ -6,6 +6,7 @@ Razlike u odnosu na tutorijal su:
 
 1. IDE za rad je  PyCharm
 2. SQLite umesto PostgreSQL
+3. PyTest Framewoprk - automated testing
 
 ## Getting Started
 
@@ -103,7 +104,7 @@ Dodaje novi komentar. Ovo je primer za slanje:
 Takodje kao primer postoji i [http://0.0.0.0:8090/api/Hello](http://0.0.0.0:8090/api/Hello) koji ima samo GET i vraca Hello World.
 `curl -XPOST -d '{ "category_id": "id kategorije", "comment": "tekst komentara" }' 'http://0.0.0.0:8090/api/Comment'`
 
-## Running the Tests
+## Running the Tests -PyTest
 Postoji i mogucnost pokretanja automatskih testova pomocu pytest ekstenzije. Skripta Tests/test_hello.py testira Hello World API, Tests/test_comment.py testira Comment API, a Tests/test_category.py testira Category API.
 Ovi testovi se pokrecu iz PyCharm-a desnim klikom na fajl, pa Run.
 
