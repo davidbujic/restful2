@@ -6,7 +6,7 @@ Razlike u odnosu na tutorijal su:
 
 1. IDE za rad je  PyCharm
 2. SQLite umesto PostgreSQL
-3. PyTest Framewoprk - automated testing
+3. PyTest Framework - automated testing
 
 ## Getting Started
 
